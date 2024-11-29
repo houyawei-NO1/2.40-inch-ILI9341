@@ -11,7 +11,7 @@
 # 2.40-inch-ILI9341
  中景园电子SPI串口彩屏2.40-inch-ILI9341，STC驱动
 
- ![效果图](https://github.com/houyawei-NO1/STC-2.25inch-76x284-LCD-ZJY225KP/blob/main/%E6%95%88%E6%9E%9C%E5%9B%BE.jpg)
- ![效果视频](https://github.com/houyawei-NO1/STC-2.25inch-76x284-LCD-ZJY225KP/blob/main/%E6%95%88%E6%9E%9C%E8%A7%86%E9%A2%91.mp4)
-  ![效果视频2](https://github.com/houyawei-NO1/STC-2.25inch-76x284-LCD-ZJY225KP/blob/main/%E6%95%88%E6%9E%9C%E8%A7%86%E9%A2%91%20(2).mp4)
+ ![效果图](https://github.com/houyawei-NO1/2.40-inch-ILI9341/blob/main/%E6%95%88%E6%9E%9C%E5%9B%BE.jpg)
+ ![效果视频](https://github.com/houyawei-NO1/2.40-inch-ILI9341/blob/main/%E6%95%88%E6%9E%9C%E8%A7%86%E9%A2%91.mp4)
+ 
 
