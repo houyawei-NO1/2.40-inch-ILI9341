@@ -1,0 +1,7 @@
+"main.obj",
+"lcd_init.obj",
+"lcd.obj" 
+TO "2-40-inch-ILI9341" 
+CASE 
+CLASSES (EDATA (0x0-0xFFF), 
+HDATA (0x0-0xFFF)) 

@@ -1,0 +1,126 @@
+C251 COMPILER V5.60.0,  main                                                               29/11/24  13:55:54  PAGE 1   
+
+
+C251 COMPILER V5.60.0, COMPILATION OF MODULE main
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: D:\Keil_v5\C251\BIN\C251.EXE main.c XSMALL INTR2 BROWSE INCDIR(.\SRC\LCD) DEBUG
+
+stmt  level    source
+
+    1          /*---------------------------------------------------------------------*/
+    2          /* --- STC MCU Limited ------------------------------------------------*/
+    3          /* --- STC 1T Series MCU Demo Programme -------------------------------*/
+    4          /* --- Mobile: (86)13922805190 ----------------------------------------*/
+    5          /* --- Fax: 86-0513-55012956,55012947,55012969 ------------------------*/
+    6          /* --- Tel: 86-0513-55012928,55012929,55012966 ------------------------*/
+    7          /* --- Web: www.STCAI.com ---------------------------------------------*/
+    8          /* --- BBS: www.STCAIMCU.com  -----------------------------------------*/
+    9          /* --- QQ:  800003751 -------------------------------------------------*/
+   10          /* 如果要在程序中使用此代码,请在程序中注明使用了STC的资料及程序            */
+   11          /*---------------------------------------------------------------------*/
+   12          
+   13          /*************  功能说明    **************
+   14          
+   15          本例程基于STC32G为主控芯片的实验箱进行编写测试。
+   16          
+   17          使用Keil C251编译器，Memory Model推荐设置XSmall模式，默认定义变量在edata，单时钟存取访问速度快。
+   18          
+   19          edata建议保留1K给堆栈使用，空间不够时可将大数组、不常用变量加xdata关键字定义到xdata空间。
+   20          
+   21          单纯的IO口初始化，端口模式配置参考程序.
+   22          
+   23          下载时, 选择时钟 24MHz (用户可自行修改频率).
+   24          
+   25          ******************************************/
+   26          
+   27          //#include "..\..\comm\STC32G.h"
+   28          
+   29          #include "stdio.h"
+   30          #include "intrins.h"
+   31          
+   32          #include "lcd_init.h"
+   33          #include "lcd.h"
+   34          #include "pic.h"
+   35          
+   36          //typedef       unsigned char   u8;
+   37          //typedef       unsigned int    u16;
+   38          //typedef       unsigned long   u32;
+   39          
+   40          
+   41          /****************************** 用户定义宏 ***********************************/
+   42          
+   43          
+   44          /*****************************************************************************/
+   45          
+   46          /*************  本地常量声明    **************/
+   47          
+   48          
+   49          /*************  本地变量声明    **************/
+   50                  u8 i,j;
+   51                  float t=0;
+   52          
+   53          /*************  本地函数声明    **************/
+   54          
+   55          
+   56          /********************* 主函数 *************************/
+   57          void main(void)
+   58          {
+   59   1          WTST = 0;  //设置程序指令延时参数，赋值为0可将CPU执行指令的速度设置为最快
+C251 COMPILER V5.60.0,  main                                                               29/11/24  13:55:54  PAGE 2   
+
+   60   1          EAXFR = 1; //扩展寄存器(XFR)访问使能
+   61   1          CKCON = 0; //提高访问XRAM速度
+   62   1      
+   63   1              P2M0 = 0x00; P2M1 = 0x00; 
+   64   1              
+   65   1              EA = 1;     //打开总中断
+   66   1              
+   67   1              LCD_Init();//LCD初始化
+   68   1              LCD_Fill(0,0,LCD_W,LCD_H,WHITE);
+   69   1              P35=0;
+   70   1              
+   71   1              while(1)
+   72   1              {
+   73   2                      
+   74   2                      LCD_ShowChinese(0,0,"中景园电子",RED,WHITE,32,0);
+   75   2                      LCD_ShowString(0,40,"LCD_W:",RED,WHITE,16,0);
+   76   2                      LCD_ShowIntNum(48,40,LCD_W,3,RED,WHITE,16);
+   77   2                      LCD_ShowString(80,40,"LCD_H:",RED,WHITE,16,0);
+   78   2                      LCD_ShowIntNum(128,40,LCD_H,3,RED,WHITE,16);
+   79   2                      LCD_ShowString(80,40,"LCD_H:",RED,WHITE,16,0);
+   80   2                      LCD_ShowString(0,70,"Increaseing Nun:",RED,WHITE,16,0);
+   81   2                      LCD_ShowFloatNum1(128,70,t,4,RED,WHITE,16);
+   82   2                      t+=0.11;
+   83   2                      for(j=0;j<5;j++)
+   84   2                      {
+   85   3                              for(i=0;i<6;i++)
+   86   3                              {
+   87   4                                      LCD_ShowPicture(40*i,120+j*40,40,40,gImage_1);
+   88   4                              }
+   89   3                      }
+   90   2              }
+   91   1      }
+
+
+Module Information          Static   Overlayable
+------------------------------------------------
+  code size            =      3665     ------
+  ecode size           =    ------     ------
+  data size            =    ------     ------
+  idata size           =    ------     ------
+  pdata size           =    ------     ------
+  xdata size           =    ------     ------
+  xdata-const size     =    ------     ------
+  edata size           =         6     ------
+  bit size             =    ------     ------
+  ebit size            =    ------     ------
+  bitaddressable size  =    ------     ------
+  ebitaddressable size =    ------     ------
+  far data size        =    ------     ------
+  huge data size       =    ------     ------
+  const size           =    ------     ------
+  hconst size          =        50     ------
+End of Module Information.
+
+
+C251 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
